@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-
 // Bootstrap
 @import "bootstrap/functions";
 @import "bootstrap/variables";
@@ -11,7 +9,6 @@
 
 // Layout
 @import "custom/layout/base";
-@import "custom/layout/editable";
 
 // Content
 @import "custom/content/type";
@@ -20,18 +17,13 @@
 // Components
 @import "custom/components/buttons";
 @import "custom/components/form";
-@import "custom/components/card";
-@import "custom/components/nav";
 
 // Utilities
-@import "custom/utilities/background";
-@import "custom/utilities/border";
 @import "custom/utilities/position";
 @import "custom/utilities/sizing";
 @import "custom/utilities/spacing";
 
 // Plugin
-@import "plugin/ofi";
-@import "plugin/swiper/swiper";
-@import "plugin/chosen";
-@import "plugin/jquery.imageSelect";
+// @import "plugin/ofi";
+// @import "plugin/chosen";
+// @import "plugin/jquery.imageSelect";

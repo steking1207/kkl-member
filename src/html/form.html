@@ -1,0 +1,113 @@
+@@include('../partial/global/_head.html',{title:'填寫會員資料'})
+    <body id="top">
+        @@include('../partial/global/_header.html')
+        <main class="pb-100">
+            <div class="container-fluid">
+                <form id="google-form">
+                    <div class="d-grid gap-12 mb-40">
+                        <div class="mb-0 h3 text-center">
+                            填寫會員資料
+                        </div>
+                    </div>
+                    <div class="d-grid gap-20 mb-60 mx-20">
+                        <div class="row align-items-center g-8">
+                            <label for="name" class="col-3 col-form-label lh-1">
+                                *姓名<br>name
+                            </label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="name" placeholder="請輸入姓名">
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label for="title" class="col-3 col-form-label lh-1">
+                                *稱謂<br>title
+                            </label>
+                            <div class="col-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">先生</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio1">女士</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio1">小姐</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label for="nation" class="col-3 col-form-label lh-1">
+                                *國籍<br>nation
+                            </label>
+                            <div class="col-9">
+                                <input type="text" class="form-control" id="nation" placeholder="請輸入國籍">
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label for="phone" class="col-3 col-form-label lh-1">
+                                *手機<br>phone
+                            </label>
+                            <div class="col-9">
+                                <input class="form-control" id="phone" name="phone" type="tel" placeholder="請輸入手機號碼">
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label for="address" class="col-12 col-form-label lh-1">
+                                聯絡地址 address
+                            </label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="address" placeholder="請輸入聯絡地址">
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label for="email" class="col-12 col-form-label lh-1">
+                                *電子郵件 e-mail
+                            </label>
+                            <div class="col-12">
+                                <input type="email" class="form-control" id="email" placeholder="請輸入電子郵件">
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label for="idnumber" class="col-12 col-form-label lh-1">
+                                身分證字號/居留證號碼 ID number
+                            </label>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="idnumber" placeholder="請輸入身分證字號/居留證號碼">
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="tip">
+                                <label class="form-check-label fs-small" for="tip">
+                                    *提醒您：送出資料後即代表您同意將此資料提供金門酒廠進行行銷處理與使用。<br>
+                                    these Terms of Service help define Kinmen Kaoliang Liquor Inc.’s relationship with you as you interact with our services.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    @@include('../partial/comp/_btn-group.html',{
+                        col:'-6',
+                        group: {
+                            item: [
+                                {btnStyle:'outline-secondary', btnLabel:'送出',},
+                            ],
+                        },
+                    })
+                </form>
+            </div>
+        </main>
+        @@include('../partial/global/_footer.html')
+        <!-- global -->
+        @@include('../partial/global/_js.html')
+        
+        <script>
+            $("#phone").intlTelInput({
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.0.3/js/utils.js",
+  allowDropdown: true
+});
+          </script>
+
+    </body>
+</html>
