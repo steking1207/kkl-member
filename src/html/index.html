@@ -8,11 +8,11 @@
                         <div class="col-auto">
                             <label for="birthdate" class="form-label">請選擇您的生日</label>
                         </div>
-                        <div class="col text-end">
+                        <!-- <div class="col text-end">
                             <i class="bi bi-calendar4-week"></i>
-                        </div>
+                        </div> -->
                     </div>
-                    <input class="form-control form-control-lg rounded" type="date" id="birthdate">
+                    <input class="form-control form-control-lg rounded" type="text" id="birthdate" placeholder="年/月/日" onfocus="(this.type='date')" onblur="(this.type='text')" onchange="validateBirthday()" required>
                 </div>
                 @@include('../partial/comp/_btn-group.html',{
                     col:'-6',
@@ -25,7 +25,41 @@
             </div>
         </main>
         @@include('../partial/global/_footer.html')
-        <!-- global -->
-        @@include('../partial/global/_js.html')
+        <script>
+            function checkAge() {
+                var birthdateInput = document.getElementById('birthdate');
+                var birthDate = birthdateInput.value;
+                var today = new Date();
+                var birth = new Date(birthDate);
+                var age = today.getFullYear() - birth.getFullYear();
+                var hasPassedBirthday = today.getMonth() > birth.getMonth() || (today.getMonth() === birth.getMonth() && today.getDate() >= birth.getDate());
+                if (age > 18 || (age === 18 && hasPassedBirthday)) {
+                    window.location.href = "form.html";
+                } else {
+                    window.location.href = "alert.html";
+                }
+            }
+            
+            function validateBirthday() {
+                var birthdayInput = document.getElementById('birthdate');
+                var birthday = new Date(birthdayInput.value);
+                var today = new Date();
+                today.setHours(0, 0, 0, 0);
+                if (birthday > today) {
+                    alert("生日不能晚於今天！");
+                    birthdayInput.value = ''; // 清空输入框的值
+                }
+            }
+
+            var inputText = document.getElementById('birthdate');
+            var submitButton = document.getElementById('submit');
+            inputText.addEventListener('input', function() {
+                if (inputText.value.trim() !== '') {
+                    submitButton.classList.add('btn-outline-dark');
+                } else {
+                    submitButton.classList.remove('btn-outline-dark');
+                }
+            });
+        </script>
     </body>
 </html>
