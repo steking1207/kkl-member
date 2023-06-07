@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Language" content="zh-TW">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+        <meta name="keywords" content=""/>
+        <meta name="description" content="">
+        <meta property="og:image" itemprop="image" content="" />
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="金門酒廠" />
+        
+        <title>填寫會員資料 | 金門酒廠</title>
+        
+        
+        
+        <link rel="stylesheet" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>script>
+    </head>
+    <body id="top">
+        <header class="" id="header">
+            <div class="container-fluid py-60">
+                <div class="text-center">
+                    <img src="assets/img/logo.svg" height="75" alt="金門酒廠">
+                </div>
+            </div>
+        </header>
+
+        <main class="pb-100">
+            <div class="container-fluid">
+                <form class="validate-form" id="google-form">
+                    <div class="d-grid gap-12 mb-40">
+                        <div class="mb-0 h3 text-center">
+                            填寫會員資料
+                        </div>
+                    </div>
+                    <div class="d-grid gap-20 mb-60 mx-20">
+                        <div class="row align-items-center g-8">
+                            <label class="col-3 col-form-label lh-1" for="name">
+                                *姓名<br>name
+                            </label>
+                            <div class="col-9">
+                                <div class="wrap-input100 validate-input">
+                                    <input type="text" class="form-control input100" id="name" placeholder="請輸入姓名">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label for="title" class="col-3 col-form-label lh-1">
+                                *稱謂<br>title
+                            </label>
+                            <div class="col-9">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="title" id="title1" value="先生">
+                                    <label class="form-check-label" for="title1">先生</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="title" id="title2" value="女士">
+                                    <label class="form-check-label" for="title2">女士</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="title" id="title3" value="小姐">
+                                    <label class="form-check-label" for="title3">小姐</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label class="col-3 col-form-label lh-1" for="nation">
+                                *國籍<br>nation
+                            </label>
+                            <div class="col-9">
+                                <div class="wrap-input100 validate-input">
+                                    <input class="form-control input100" id="nation" type="text" placeholder="請輸入國籍">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label class="col-3 col-form-label lh-1" for="phone">
+                                *手機<br>phone
+                            </label>
+                            <div class="col-9">
+                                <div class="wrap-input100 validate-input">
+                                    <input class="form-control input100" id="phone" name="phone" type="tel" placeholder="請輸入手機號碼">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label class="col-12 col-form-label lh-1" for="address">
+                                聯絡地址 address
+                            </label>
+                            <div class="col-12">
+                                <input class="form-control" id="address" type="text" placeholder="請輸入聯絡地址">
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label class="col-12 col-form-label lh-1" for="email">
+                                *電子郵件 e-mail
+                            </label>
+                            <div class="col-12">
+                                <div class="wrap-input100 validate-input">
+                                    <input class="form-control input100" id="email" type="email" placeholder="請輸入電子郵件">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-8">
+                            <label class="col-12 col-form-label lh-1" for="idnumber">
+                                身分證字號/居留證號碼 ID number
+                            </label>
+                            <div class="col-12">
+                                <input class="form-control" id="idnumber" type="text" placeholder="請輸入身分證字號/居留證號碼">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button type="button" id="submit" class="button-primary u-full-width">確認送出</button>
+                    <div class="d-flex gap-12 col-6   mx-auto">
+                        
+                            <div class="d-grid col">
+                                <button class="btn btn-lg btn-outline-secondary " id="submit" type="button" >
+                                    送出
+                                </button>
+                            </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </main>
+        <footer class="fixed-bottom" id="footer">
+            <div class="container-fluid bg-black py-20">
+                <div class="h4 fw-normal text-center text-secondary mb-0">
+                    <span>酒後不開車</span>
+                    <span>安全有保障</span>
+                </div>
+            </div>
+        </footer>
+        
+        
+        <script>
+            $(function() {
+              $('#submit').on('click', function() {
+                
+                // 姓名
+                var name = $('#name').val() || '未填寫';
+        
+                // 性別
+                var title = function() {
+                  var v;
+                  $('[name="title"]').each(function() {
+                    if($(this).prop('checked') === true) v = $(this).val();
+                  });
+                  return v;
+                };        
+                var nation = $('#nation').val() || '未填寫';
+                var phone = $('#phone').val() || '未填寫';
+                var address = $('#address').val() || '未填寫';
+                var email = $('#email').val() || '未填寫';
+                var idnumber = $('#idnumber').val() || '未填寫';
+        
+                // post
+                var data = {
+                  'entry.902173817': name,
+                  'entry.913999100': title(),
+                  'entry.2081263291': nation,
+                  'entry.1916522837': phone,
+                  'entry.1916522837': address,
+                  'entry.1253561105': email,
+                  'entry.2015907215': idnumber,
+                //   'entry.715549297': consent
+                };
+                $.ajax({
+                  type: 'POST',
+                  url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSc0zn-HrwxEEm6BPh1lCcRgQo5-0KwYDmFS1nip57UbW9ppHQ/formResponse',
+                  data: data,
+                  contentType: 'application/json',
+                  dataType: 'jsonp',
+                  complete: function() {
+                    alert('資料已送出！');
+                  }
+                });
+                
+              });
+            });
+          </script>
+    </body>
+</html>
