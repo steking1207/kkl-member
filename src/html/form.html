@@ -3,7 +3,7 @@
         @@include('../partial/global/_header.html')
         <main class="pb-100">
             <div class="container-fluid">
-                <div class="d-grid gap-12 mb-40">
+                <div class="d-grid gap-12 mb-20">
                     <div class="mb-0 h3 text-center">
                         填寫會員資料
                     </div>
@@ -117,13 +117,13 @@
 
                     // post
                     var data = {
-                    'entry.323265529': name,
-                    'entry.1559349414': title(),
-                    'entry.2061024962': nation,
-                    'entry.849966519': phone,
-                    'entry.704626700': email,
-                    'entry.1481815434': address,
-                    'entry.1700955972': idnumber
+                    'entry.1147564651': name,
+                    'entry.260124935': title(),
+                    'entry.436519124': nation,
+                    'entry.321157543': phone,
+                    'entry.1564237122': email,
+                    'entry.697882627': address,
+                    'entry.1073581126': idnumber
                     };
 
                     var isValid = true;
@@ -157,7 +157,7 @@
                     if ($('#name').val() && $('#nation').val() && $('#phone').val() && $('#email').val()) {
                         $.ajax({
                             type: 'POST',
-                            url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSejek7MnZ3b8OD4yqV6Q4JjDxIvSTkACtxpuSNKPDMUt1fIhQ/formResponse',
+                            url: 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSf2kqwHSdvefzCYOyz4FISR63aZyDHGI0HDyEgO8xaOwALI-w/formResponse',
                             data: data,
                             contentType: 'application/json',
                             dataType: 'jsonp',

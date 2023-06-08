@@ -12,16 +12,13 @@
                             <i class="bi bi-calendar4-week"></i>
                         </div> -->
                     </div>
-                    <input class="form-control form-control-lg rounded" type="text" id="birthdate" placeholder="年/月/日" onfocus="(this.type='date')" onblur="(this.type='text')" onchange="validateBirthday()" required>
+                    <input class="form-control form-control-lg rounded" type="text" id="birthdate" placeholder="年/月/日" inputmode="none" onfocus="(this.type='date')" onblur="(this.type='text')" onchange="validateBirthday()" required>
                 </div>
-                @@include('../partial/comp/_btn-group.html',{
-                    col:'-6',
-                    group: {
-                        item: [
-                            {btnStyle:'outline-secondary', btnLabel:'下一步', onclick:'checkAge()'},
-                        ],
-                    },
-                })
+                <div class="d-flex gap-12 col-6 mx-auto">
+                    <div class="d-grid col">
+                        <button class="btn btn-lg btn-outline-secondary" id="submit" type="button" onclick="checkAge()" disabled>下一步</button>
+                    </div>
+                </div>
             </div>
         </main>
         @@include('../partial/global/_footer.html')
@@ -51,13 +48,26 @@
                 }
             }
 
+            $(document).ready(function() {
+                $('#birthdate').on('input', function() {
+                    var selectedDate = $(this).val();
+                    var today = new Date().toISOString().split('T')[0];
+
+                    if (selectedDate > today) {
+                    $(this).val(today);
+                    }
+                });
+            });
+            
             var inputText = document.getElementById('birthdate');
             var submitButton = document.getElementById('submit');
             inputText.addEventListener('input', function() {
                 if (inputText.value.trim() !== '') {
                     submitButton.classList.add('btn-outline-dark');
+                    submitButton.disabled = false;
                 } else {
                     submitButton.classList.remove('btn-outline-dark');
+                    submitButton.disabled = true;
                 }
             });
         </script>
