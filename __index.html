@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>年龄验证</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>年龄验证</h1>
+  <form>
+    <label for="dob">出生日期:</label>
+    <input type="date" id="dob" required>
+    <div id="error-msg" class="error"></div>
+    <br><br>
+    
+    <button class="btn btn-lg btn-outline-secondary" id="submit" type="button" disabled>下一步</button>
+  </form>
+
+  <script>
+    $(document).ready(function() {
+      $('form').on('submit', function(e) {
+        e.preventDefault();
+        
+        var dob = new Date($('#dob').val());
+        var today = new Date();
+        var minimumAge = 18;
+        var minimumDate = new Date(today.getFullYear() - minimumAge, today.getMonth(), today.getDate());
+
+        if (dob > today) {
+            alert("生日不能晚於今天！");
+        //   $('#error-msg').text('日期不能超过明天之后');
+        //   $('#dob').addClass('error');
+          window.location.reload();
+        } else if (dob > minimumDate) {
+            window.location.href = 'alert.html';
+        } else {
+          $('#error-msg').text('');
+          $('#dob').removeClass('error');
+          window.location.href = 'form.html'; // 跳转到欢迎页面
+        }
+      });
+    });
+
+    
+
+  </script>
+</body>
+</html>
