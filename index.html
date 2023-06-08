@@ -41,7 +41,8 @@
                         </div>
                         
                     </div>
-                    <input class="form-control form-control-lg rounded" type="text" id="birthdate" placeholder="年/月/日" inputmode="none" onfocus="(this.type='date')" onblur="(this.type='text')" onchange="validateBirthday()" required>
+                    
+                    <input class="form-control form-control-lg rounded" type="date" id="birthdate" placeholder="年/月/日" onchange="validateBirthday()" required>
                 </div>
                 <div class="d-flex gap-12 col-6 mx-auto">
                     <div class="d-grid col">
@@ -94,7 +95,7 @@
                     }
                 });
             });
-            
+
             var inputText = document.getElementById('birthdate');
             var submitButton = document.getElementById('submit');
             inputText.addEventListener('input', function() {
