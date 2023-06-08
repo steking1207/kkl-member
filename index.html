@@ -43,6 +43,7 @@
                     </div>
                     
                     <input class="form-control form-control-lg rounded" type="date" id="birthdate" placeholder="年/月/日" onchange="validateBirthday()" required>
+                    <div id="error-msg" class="error"></div>
                 </div>
                 <div class="d-flex gap-12 col-6 mx-auto">
                     <div class="d-grid col">
@@ -50,6 +51,32 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <label for="date">Select Date:</label>
+  <input type="date" id="date" name="date" required>
+
+  <script>
+    var dateInput = document.getElementById('date');
+
+    // 取得當前年份
+    var currentYear = new Date().getFullYear();
+
+    // 設定可選的最小年份和最大年份
+    var minYear = currentYear - 10; // 10年前
+    var maxYear = currentYear + 10; // 10年後
+
+    // 轉換為日期格式
+    var minDate = minYear + '-01-01';
+    var maxDate = maxYear + '-12-31';
+
+    // 設定最小和最大日期屬性
+    dateInput.setAttribute('min', minDate);
+    dateInput.setAttribute('max', maxDate);
+  </script>
+
+  
         </main>
         <footer class="fixed-bottom" id="footer">
             <div class="container-fluid bg-black py-20">
@@ -85,16 +112,17 @@
                 }
             }
 
-            $(document).ready(function() {
-                $('#birthdate').on('input', function() {
-                    var selectedDate = $(this).val();
-                    var today = new Date().toISOString().split('T')[0];
+            // $(document).ready(function() {
+            //     $('#birthdate').on('input', function() {
+            //         var selectedDate = $(this).val();
+            //         var today = new Date().toISOString().split('T')[0];
 
-                    if (selectedDate > today) {
-                    $(this).val(today);
-                    }
-                });
-            });
+            //         if (selectedDate > today) {
+            //         $(this).val(today);
+            //         }
+            //     });
+            // });
+            
 
             var inputText = document.getElementById('birthdate');
             var submitButton = document.getElementById('submit');
