@@ -156,13 +156,13 @@
 
                     // post
                     var data = {
-                    'entry.1147564651': name,
-                    'entry.260124935': title(),
-                    'entry.436519124': nation,
-                    'entry.321157543': phone,
-                    'entry.1564237122': email,
-                    'entry.697882627': address,
-                    'entry.1073581126': idnumber
+                    'entry.323265529': name,
+                    'entry.1559349414': title(),
+                    'entry.2061024962': nation,
+                    'entry.849966519': phone,
+                    'entry.704626700': email,
+                    'entry.1481815434': address,
+                    'entry.1700955972': idnumber
                     };
 
                     var isValid = true;
@@ -196,7 +196,7 @@
                     if ($('#name').val() && $('#nation').val() && $('#phone').val() && $('#email').val()) {
                         $.ajax({
                             type: 'POST',
-                            url: 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSf2kqwHSdvefzCYOyz4FISR63aZyDHGI0HDyEgO8xaOwALI-w/formResponse',
+                            url: 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSejek7MnZ3b8OD4yqV6Q4JjDxIvSTkACtxpuSNKPDMUt1fIhQ/formResponse',
                             data: data,
                             contentType: 'application/json',
                             dataType: 'jsonp',
