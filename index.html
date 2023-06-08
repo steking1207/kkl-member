@@ -51,32 +51,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <label for="date">Select Date:</label>
-  <input type="date" id="date" name="date" required>
-
-  <script>
-    var dateInput = document.getElementById('date');
-
-    // 取得當前年份
-    var currentYear = new Date().getFullYear();
-
-    // 設定可選的最小年份和最大年份
-    var minYear = currentYear - 10; // 10年前
-    var maxYear = currentYear + 10; // 10年後
-
-    // 轉換為日期格式
-    var minDate = minYear + '-01-01';
-    var maxDate = maxYear + '-12-31';
-
-    // 設定最小和最大日期屬性
-    dateInput.setAttribute('min', minDate);
-    dateInput.setAttribute('max', maxDate);
-  </script>
-
-  
         </main>
         <footer class="fixed-bottom" id="footer">
             <div class="container-fluid bg-black py-20">
@@ -105,7 +79,7 @@
                 var birthdayInput = document.getElementById('birthdate');
                 var birthday = new Date(birthdayInput.value);
                 var today = new Date();
-                today.setHours(0, 0, 0, 0);
+                // today.setHours(0, 0, 0, 0);
                 if (birthday > today) {
                     alert("生日不能晚於今天！");
                     birthdayInput.value = ''; // 清空输入框的值
