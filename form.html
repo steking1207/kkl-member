@@ -115,6 +115,18 @@
                                 <input class="form-control" id="idnumber" type="text" placeholder="請輸入身分證字號/居留證號碼">
                             </div>
                         </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="agree" id="agree" value="同意" checked required>
+                            
+                            <label class="form-check-label" for="agree">
+                                *提醒您：送出資料後即代表您同意將此資料提供金門酒廠進行行銷處理與使用。<br>
+                                these Terms of Service help define Kinmen Kaoliang Liquor Inc.’s relationship with you as you interact with our services.
+                            </label>
+                        </div>
+
+                        
+
+                        
                     </div>
                     <div class="d-flex gap-12 col-6   mx-auto">
                         
@@ -147,6 +159,14 @@
                     });
                     return v;
                     };
+                    
+                    var agree = function() {
+                    var v2;
+                    $('[name="agree"]').each(function() {
+                        if($(this).prop('checked') === true) v2 = $(this).val();
+                    });
+                    return v2;
+                    };
                     var name = $('#name').val();
                     var nation = $('#nation').val();
                     var phone = $('#phone').val();
@@ -162,7 +182,8 @@
                     'entry.321157543': phone,
                     'entry.1564237122': email,
                     'entry.697882627': address,
-                    'entry.1073581126': idnumber
+                    'entry.1073581126': idnumber,
+                    'entry.237283503': agree()
                     };
 
                     var isValid = true;
@@ -170,11 +191,14 @@
                     //必填欄位檢查
                     $('#googleForm [required]').each(function() {
                     var input = $(this);
+                    var label = $('label[for="' + input.attr('id') + '"]');
                     if (input.val().trim() === '') {
                         input.addClass('input-error');
+                        label.addClass('input-error text-danger');
                         isValid = false;
                     } else {
                         input.removeClass('input-error');
+                        label.removeClass('input-error');
                     }
                     });
 
@@ -228,6 +252,7 @@
                     }
                 });
             });
+
         </script>
     </body>
 </html>

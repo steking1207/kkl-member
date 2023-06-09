@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .required {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <form id="googleForm">
+    <label for="name">姓名<span class="required">*</span></label>
+    <input type="text" id="name" required>
+    <br>
+    <label>性別<span class="required">*</span></label>
+    <br>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">男性</label>
+    <br>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">女性</label>
+    <br>
+    <input type="radio" id="other" name="gender" value="other" required>
+    <label for="other">其他</label>
+    <br>
+    <input type="submit" value="提交">
+  </form>
+
+  <script>
+    $('#googleForm').submit(function(event) {
+      event.preventDefault();
+
+      $('#googleForm [required]').each(function() {
+        const input = $(this);
+        const label = $('label[for="' + input.attr('id') + '"]');
+        
+        if (input.val().trim() === '') {
+          input.addClass('required');
+          label.addClass('required');
+        } else {
+          input.removeClass('required');
+          label.removeClass('required');
+        }
+      });
+
+      const requiredInputs = $('#googleForm [required]');
+      if (requiredInputs.filter(function() { return $(this).val().trim() === ''; }).length > 0) {
+        return;
+      }
+
+      // 在此處執行提交表單的其他操作
+      console.log('表單提交成功！');
+    });
+  </script>
+</body>
+</html>
