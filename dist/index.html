@@ -41,7 +41,9 @@
                         </div>
                         
                     </div>
-                    <input class="form-control form-control-lg rounded" type="text" id="birthdate" placeholder="年/月/日" inputmode="none" onfocus="(this.type='date')" onblur="(this.type='text')" onchange="validateBirthday()" required>
+                    
+                    <input class="form-control form-control-lg rounded" type="date" id="birthdate" placeholder="年/月/日" onchange="validateBirthday()" required>
+                    <span class="fs-small text-danger" id="dateError"></span>
                 </div>
                 <div class="d-flex gap-12 col-6 mx-auto">
                     <div class="d-grid col">
@@ -77,24 +79,26 @@
                 var birthdayInput = document.getElementById('birthdate');
                 var birthday = new Date(birthdayInput.value);
                 var today = new Date();
-                today.setHours(0, 0, 0, 0);
+                // today.setHours(0, 0, 0, 0);
                 if (birthday > today) {
                     alert("生日不能晚於今天！");
-                    birthdayInput.value = ''; // 清空输入框的值
+                    window.location.reload();
+                    // birthdayInput.value = '';
                 }
             }
 
-            $(document).ready(function() {
-                $('#birthdate').on('input', function() {
-                    var selectedDate = $(this).val();
-                    var today = new Date().toISOString().split('T')[0];
+            // $(document).ready(function() {
+            //     $('#birthdate').on('input', function() {
+            //         var selectedDate = $(this).val();
+            //         var today = new Date().toISOString().split('T')[0];
 
-                    if (selectedDate > today) {
-                    $(this).val(today);
-                    }
-                });
-            });
+            //         if (selectedDate > today) {
+            //         $(this).val(today);
+            //         }
+            //     });
+            // });
             
+
             var inputText = document.getElementById('birthdate');
             var submitButton = document.getElementById('submit');
             inputText.addEventListener('input', function() {

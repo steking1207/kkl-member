@@ -3,20 +3,19 @@
         @@include('../partial/global/_header.html')
         <main class="pb-100">
             <div class="container-fluid">
-                <div class="d-grid gap-12 my-100 mx-20">
+                <div class="d-grid gap-12 my-100 mx-32">
                     <div class="h4 fw-normal text-center">
-                        您尚未滿18歲<br>
-                        請成年後再來
+                        抱歉！此頁面無法提供未滿法定年齡者使用。
+                    </div>
+                    <div class="lead text-center">
+                        Sorry, this page is unavailable to underage users.
                     </div>
                 </div>
-                @@include('../partial/comp/_btn-group.html',{
-                    col:'-6',
-                    group: {
-                        item: [
-                            {btnStyle:'outline-dark', btnLabel:'離開', onclick:'closeWindow()'},
-                        ],
-                    },
-                })
+                <div class="d-flex gap-12 col-6 mx-auto">
+                    <div class="d-grid col">
+                        <a class="btn btn-lg btn-outline-dark" href="index.html">離開</a>
+                    </div>
+                </div>
             </div>
         </main>
         @@include('../partial/global/_footer.html')
